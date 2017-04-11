@@ -1,0 +1,17 @@
+Options +FollowSymLinks -MultiViews 
+<IfModule mod_rewrite.c> 
+RewriteEngine on 
+RewriteCond %{THE_REQUEST} [NC] 
+RewriteRule ^ articles/%1? [R=302,L,NE] 
+RewriteRule ^articles/([^/.]+)/?$ =$1 [NC,L,QSA] 
+</ifModule>
+<IfModule mod_rewrite.c> 
+	<IfModule mod_negotiation.c> 
+		Options -MultiViews 
+	</IfModule> 
+	RewriteEngine On # Redirect Trailing Slashes... 
+	RewriteRule ^(.*)/$ /$1 [L,R=301] # Handle Front Controller... 
+	RewriteCond %{REQUEST_FILENAME} !-d 
+	RewriteCond %{REQUEST_FILENAME} !-f 
+	RewriteRule ^ index.php [L] 
+</IfModule>
