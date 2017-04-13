@@ -14,7 +14,7 @@ use App\Clientes;
 use App\Conductores;
 
 
-class OtsController extends Controller {
+class IngresarOtController extends Controller {
 
 	/**
 	 * Display a listing of ots
@@ -27,7 +27,7 @@ class OtsController extends Controller {
     {
         $ots = Ots::with("clientes")->with("conductores")->get();
 
-		return view('admin.ots.index', compact('ots'));
+		return view('comunes.ots.index', compact('ots'));
 	}
 
 	/**
@@ -43,7 +43,7 @@ $conductores = Conductores::pluck("cond_nom", "id")->prepend('Please select', nu
 	    
         $ots_tip_cam = Ots::$ots_tip_cam;
 
-	    return view('admin.ots.create', compact("clientes", "conductores", "ots_tip_cam"));
+	    return view('comunes.ots.create', compact("clientes", "conductores", "ots_tip_cam"));
 	}
 
 	/**
@@ -74,7 +74,7 @@ $conductores = Conductores::pluck("cond_nom", "id")->prepend('Please select', nu
 	    
         $ots_tip_cam = Ots::$ots_tip_cam;
 
-		return view('admin.ots.edit', compact('ots', "clientes", "conductores", "ots_tip_cam"));
+		return view('comunes.ots.edit', compact('ots', "clientes", "conductores", "ots_tip_cam"));
 	}
 
 	/**

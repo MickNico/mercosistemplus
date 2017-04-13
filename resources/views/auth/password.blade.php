@@ -1,4 +1,4 @@
-@include('admin.partials.header')
+<? /*@include('admin.partials.header')
 <div style="margin-top: 10%;"></div>
 <div class="container-fluid">
     <div class="row">
@@ -53,3 +53,4 @@
     </div>
 </div>
 @include('admin.partials.footer')
+*/ ?>
